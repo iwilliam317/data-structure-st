@@ -1,18 +1,18 @@
 # Data Structure Agenda
 
 ## Month 1
-- [ ] - Array
-- [ ] - Linked List
-- [ ] - Hash Table
-- [ ] - Stack
+- [ ] Array
+- [ ] Linked List
+- [ ] Hash Table
+- [ ] Stack
 
 ## Month 2
-- [ ] - Queue
-- [ ] - Binary Tree
-- [ ] - Binary Search Tree
-- [ ] - Heap
+- [ ] Queue
+- [ ] Binary Tree
+- [ ] Binary Search Tree
+- [ ] Heap
 
 ## Month 3
-- [ ] - Graph
-- [ ] - Matrix
-- [ ] - Misc
+- [ ] Graph
+- [ ] Matrix
+- [ ] Misc
