@@ -3,7 +3,7 @@
 ## Month 1
 - [ ] Array
 - [ ] Linked List
-- [ ] Hash Table
+- [x] Hash Table
 - [ ] Stack
 
 ## Month 2
