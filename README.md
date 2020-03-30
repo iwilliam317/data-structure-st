@@ -5,10 +5,10 @@
 - [x] Array
 - [x] Linked List
 - [x] Hash Table
-- [ ] Stack
+- [x] Stack
 
 ### Month 2
-- [ ] Queue
+- [x] Queue
 - [x] Binary Tree
 - [ ] Binary Search Tree
 - [ ] Heap
