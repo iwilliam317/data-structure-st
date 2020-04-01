@@ -1,10 +1,10 @@
-class Node():
+class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
     
 
-class LinkedList():
+class LinkedList:
     def __init__(self):
         self.head = None
     
@@ -14,7 +14,7 @@ class LinkedList():
             self.head = new_node
             return
         current = self.head
-        while current.next is not None:
+        while current.next:
             current = current.next
         current.next = new_node
     
@@ -35,7 +35,7 @@ class LinkedList():
             return
         else:
             current_node = self.head
-            while current_node is not None:
+            while current_node:
                 print(current_node.data)
                 current_node = current_node.next
 
