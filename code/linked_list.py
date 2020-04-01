@@ -17,7 +17,14 @@ class LinkedList():
         while current.next is not None:
             current = current.next
         current.next = new_node
-        
+    
+    def insert_after_node(self, previous_data, data):
+        previous_node = self.search(previous_data)
+        if previous_node:
+            new_node = Node(data)
+            new_node.next = previous_node.next
+            previous_node.next = new_node
+
     def prepend(self, data):
         new_node = Node(data)
         new_node.next = self.head
@@ -32,10 +39,22 @@ class LinkedList():
                 print(current_node.data)
                 current_node = current_node.next
 
+    def search(self, data):
+        last_node = self.head
+        found = None
+        while last_node.next:
+            if last_node.data == data:
+                found = last_node
+                break
+            last_node = last_node.next
+        return found
 
 list = LinkedList()
 list.append('A')
 list.append('B')
 list.append('C')
-list.prepend('D')
+list.append('D')
+
+list.insert_after_node('B', 'E')
 list.print_list()
+# print(list.search('B'))
