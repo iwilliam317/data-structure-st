@@ -8,7 +8,7 @@ class LinkedList():
     def __init__(self):
         self.head = None
     
-    def push(self, data):
+    def append(self, data):
         new_node = Node(data)
         if self.head is None:
             self.head = new_node
@@ -18,6 +18,10 @@ class LinkedList():
             current = current.next
         current.next = new_node
         
+    def prepend(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
 
     def print_list(self):
         if self.head is None:
@@ -30,7 +34,8 @@ class LinkedList():
 
 
 list = LinkedList()
-list.push(12)
-list.push(2)
-list.push(3)
+list.append('A')
+list.append('B')
+list.append('C')
+list.prepend('D')
 list.print_list()
