@@ -10,3 +10,9 @@
 
 ## Structure
 ![Example of Linked List structure](https://miro.medium.com/max/816/1*rEC8Te27eo5TSYCHMA7Ttw.png)
+
+### Insert and Deletion
+O(1)
+
+### Search
+O(n)

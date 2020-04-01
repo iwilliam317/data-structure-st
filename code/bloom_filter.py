@@ -23,6 +23,7 @@ class BloomFilter():
 
     def is_value_saved(self, fnv_value, murmur_value):
         return self.big_vector[fnv_value] & self.big_vector[murmur_value]
+        
 bloom = BloomFilter()
 bloom.add_value('Table')
 bloom.add_value('Cooker')
