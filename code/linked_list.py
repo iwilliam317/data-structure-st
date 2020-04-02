@@ -41,13 +41,24 @@ class LinkedList:
 
     def search(self, data):
         last_node = self.head
-        found = None
-        while last_node.next:
-            if last_node.data == data:
-                found = last_node
-                break
+        while last_node.next and last_node.data != data:
             last_node = last_node.next
-        return found
+        return last_node
+    
+    def delete(self, data):
+        current_node = self.head
+        if current_node and current_node.data == data:
+            self.head = current_node.next
+            current_node = None
+            return
+        
+        previous_node = None
+        while current_node and current_node.data != data:
+            previous_node = current_node
+            current_node = current_node.next
+        
+        previous_node.next = current_node.next
+        current_node = None
 
 list = LinkedList()
 list.append('A')
@@ -55,6 +66,8 @@ list.append('B')
 list.append('C')
 list.append('D')
 
-list.insert_after_node('B', 'E')
+# list.insert_after_node('B', 'E')
+list.delete('C')
+
 list.print_list()
 # print(list.search('B'))
