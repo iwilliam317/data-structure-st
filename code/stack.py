@@ -5,7 +5,7 @@ class Stack():
 
     def push(self, data):
         self.storage[self.counter] = data
-        self.counter = self.counter + 1
+        self.counter += 1
 
     def size(self):
         return self.counter
@@ -13,7 +13,7 @@ class Stack():
     def pop(self):
         if self.counter == 0:
             return
-        self.counter = self.counter - 1
+        self.counter -= 1
         del self.storage[self.counter]
 
     def print_elements(self):
@@ -25,8 +25,8 @@ class Stack():
 
 stack = Stack()
 stack.push(1)
-stack.push(12)
-stack.push(13)
+stack.push(2)
+stack.push(3)
 stack.pop()
 stack.print_elements()
 print('Size:', stack.size())
