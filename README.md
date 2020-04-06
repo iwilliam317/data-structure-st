@@ -14,6 +14,7 @@
 - [ ] Heap
 
 ### Month 3
+- [x] Bloom Filter
 - [ ] Graph
 - [ ] Matrix
 - [ ] Misc
