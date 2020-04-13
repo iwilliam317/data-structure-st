@@ -60,10 +60,10 @@ class LinkedList:
         previous_node.next = current_node.next
         current_node = None
     
-    def list_size(self, node):
+    def size(self, node):
         if node is None:
             return 0
-        return 1 + self.list_size(node.next)
+        return 1 + self.size(node.next)
 
 
 list = LinkedList()
@@ -76,5 +76,5 @@ list.append('D')
 list.delete('C')
 b = list.search('B')
 list.print_list()
-print(list.list_size(b))
+print(list.size(b))
 # print(list.search('B'))
