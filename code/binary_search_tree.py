@@ -7,6 +7,19 @@ class Node:
 class BST:
     def __init__(self, data):
         self.root = Node(data)
+
+    def height(self):
+        if self.root is None:
+            return 0
+        return self._height(self.root, 0)
+    
+    def _height(self, current_node, current_height):
+        if current_node is None:
+            return current_height
+        left_tree = self._height(current_node.left, current_height + 1)
+        right_tree = self._height(current_node.right, current_height + 1)
+
+        return max(left_tree, right_tree)
     
     def inorder_traversal(self, node, traversal):
         if node:
@@ -44,4 +57,5 @@ bst.insert(30)
 bst.insert(30)
 
 print(bst.inorder_traversal(bst.root, ''))
+print(bst.height())
 
