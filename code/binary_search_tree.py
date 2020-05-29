@@ -21,12 +21,26 @@ class BST:
 
         return max(left_tree, right_tree)
     
-    def inorder_traversal(self, node, traversal):
-        if node:
-            traversal = self.inorder_traversal(node.left, traversal)
-            traversal += str(node.data) + ' '
-            traversal = self.inorder_traversal(node.right, traversal)
-        return traversal
+    # print option 1
+    # def print_bst(self, node, traversal):
+    #     if node:
+    #         traversal = self.print_bst(node.left, traversal)
+    #         traversal += str(node.data) + ' '
+    #         traversal = self.print_bst(node.right, traversal)
+    #     return traversal
+
+    # print option 2
+    def print_tree(self):
+        if self.root:
+            self._print_tree(self.root)
+    
+    def _print_tree(self, current_node):
+        if current_node is None:
+            return
+        self._print_tree(current_node.left)
+        print(current_node.data)
+        self._print_tree(current_node.right)
+
     
     def insert(self, data):
         if self.root is None:
@@ -56,6 +70,7 @@ bst.insert(13)
 bst.insert(30)
 bst.insert(30)
 
-print(bst.inorder_traversal(bst.root, ''))
+# print(bst.print_bst(bst.root, ''))
+print(bst.print_tree())
 print(bst.height())
 
