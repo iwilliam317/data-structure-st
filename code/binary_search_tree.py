@@ -61,6 +61,21 @@ class BST:
                 self._insert(data, current_node.right)
         else:
             print('Number %s already in tree' %(data))
+    
+    def search(self, data):
+        if self.root:
+            return self._search(data, self.root)
+        return False
+
+    def _search(self, data, current_node):
+        if current_node.data == data:
+            return True
+        elif data < current_node.data and current_node.left:
+            return self._search(data, current_node.left)
+        elif data > current_node.data and current_node.right:
+            return self._search(data, current_node.right)
+        else:
+            return False
 
 bst = BST(22)
 
@@ -73,4 +88,6 @@ bst.insert(30)
 # print(bst.print_bst(bst.root, ''))
 print(bst.print_tree())
 print(bst.height())
+print(bst.search(3))
+print(bst.search(33))
 
