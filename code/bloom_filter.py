@@ -1,10 +1,10 @@
-import pyhash
+from pyhash import murmur3_32, fnv1_32
 
 class BloomFilter():
     def __init__(self):
         self.big_vector = [0] * 20
-        self.fnv = pyhash.fnv1_32()
-        self.murmur = pyhash.murmur3_32()
+        self.fnv = fnv1_32()
+        self.murmur = murmur3_32()
     
     def add_value(self, value):
         fnv_value = self.fnv(value) % 20
