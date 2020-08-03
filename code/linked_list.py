@@ -65,6 +65,16 @@ class LinkedList:
             return 0
         return 1 + self.size(node.next)
 
+    def reverse(self):
+        previous_node = None
+        current_node = self.head
+
+        while current_node:
+            next = current_node.next
+            current_node.next = previous_node
+            previous_node = current_node
+            current_node = next
+        self.head = previous_node
 
 list = LinkedList()
 list.append('A')
@@ -73,8 +83,10 @@ list.append('C')
 list.append('D')
 
 # list.insert_after_node('B', 'E')
-list.delete('C')
-b = list.search('B')
+# list.delete('C')
+# b = list.search('B')
+# list.print_list()
+# print(list.size(b))
+list.reverse()
 list.print_list()
-print(list.size(b))
 # print(list.search('B'))
