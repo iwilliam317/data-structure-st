@@ -15,6 +15,12 @@ class Stack():
             return
         self.counter -= 1
         del self.storage[self.counter]
+    
+    def is_empty(self):
+        return len(self.storage) == 0
+
+    def peek(self):
+        return self.storage[self.counter-1]
 
     def print_elements(self):
         for i in self.storage:
@@ -24,9 +30,11 @@ class Stack():
 
 
 stack = Stack()
-stack.push(1)
-stack.push(2)
-stack.push(3)
+stack.push('A')
+stack.push('B')
+stack.push('C')
 stack.pop()
 stack.print_elements()
 print('Size:', stack.size())
+print(stack.is_empty())
+print(stack.peek())

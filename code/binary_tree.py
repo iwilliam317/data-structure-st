@@ -5,9 +5,24 @@ class Node:
         self.left = None
 
 
-class BinaryTree(object):
-    def __init__(self, root):
-        self.root = root
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+
+    def insert(self, data):
+        if self.root is None:
+            self.root = Node(data)
+        else:
+            self._insert(data, self.root)
+
+    def _insert(self, data, node):
+        if node.left is None:
+            node.left = Node(data)
+        elif node.right is None:
+            node.right = Node(data)
+        else:
+            self._insert(data, node.left)
+            self._insert(data, node.right)
 
     def pre_order_print(self, start, transversal):
         if start:
@@ -34,15 +49,15 @@ class BinaryTree(object):
 #       B               C
 #   D       E       F       G
 
-tree = BinaryTree(Node('A'))
-tree.root.left = Node('B')
-tree.root.right = Node('C')
+tree = BinaryTree()
+# tree.root.left = Node('B')
+# tree.root.right = Node('C')
 
-tree.root.left.left = Node('D')
-tree.root.left.right = Node('E')
+# tree.root.left.left = Node('D')
+# tree.root.left.right = Node('E')
 
-tree.root.right.left = Node('F')
-tree.root.right.right = Node('G')
+# tree.root.right.left = Node('F')
+# tree.root.right.right = Node('G')
 
 # print(tree.root.data)
 # print(tree.root.left.data)
@@ -50,6 +65,13 @@ tree.root.right.right = Node('G')
 # print(tree.root.left.left.data)
 # print(tree.root.left.right.data)
 
+tree.insert('A')
+tree.insert('B')
+tree.insert('C')
+tree.insert('D')
+tree.insert('E')
+
+
 print(tree.pre_order_print(tree.root, ""))
-print(tree.in_order_print(tree.root, ""))
-print(tree.post_order_print(tree.root, ""))
+# print(tree.in_order_print(tree.root, ""))
+# print(tree.post_order_print(tree.root, ""))
